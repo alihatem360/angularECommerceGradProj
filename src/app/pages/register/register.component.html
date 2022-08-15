@@ -1,1 +1,89 @@
-<p>register works!</p>
+<section
+  class="container min-vh-100 min-vw-100 d-flex flex-direction-column align-items-center justify-content-center text-capitalize"
+  style="background-image: url('../../../assets/photos/swirl_pattern.webp')"
+>
+  <div
+    class="d-flex flex-direction-column align-items-center justify-content-center p-3"
+    style="max-height: 100%"
+  >
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-md-8">
+        <div class="card" style="border-radius: 1rem">
+          <div class="row g-0 align-items-center">
+            <div class="col-xl-4 col-md-4 d-none d-md-block">
+              <img
+                src="../../../assets/photos/logo.png"
+                class="img-fluid"
+                alt="logo"
+              />
+            </div>
+            <div class="col-md-6 col-lg-8 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-4 text-black">
+                <form>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-8 col-xl-4">
+                        <img
+                          src="../../../assets/photos/undraw_welcome_cats_thqn.svg"
+                          alt="login form"
+                          class="img-fluid"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-2" style="letter-spacing: 1px">
+                    Register your account
+                  </h5>
+                  <div class="form-outline mb-3">
+                    <input
+                      type="text"
+                      id="nameField"
+                      class="form-control form-control-lg"
+                      name="nameField"
+                    />
+                    <label class="form-label" for="nameField">User name</label>
+                  </div>
+                  <div class="form-outline mb-3">
+                    <input
+                      type="email"
+                      id="emailField"
+                      class="form-control form-control-lg"
+                      name="emailField"
+                    />
+                    <label class="form-label" for="emailField"
+                      >Email address</label
+                    >
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <input
+                      type="password"
+                      id="passwordField"
+                      class="form-control form-control-lg"
+                      name="passwordField"
+                    />
+                    <label class="form-label" for="passwordField"
+                      >Password</label
+                    >
+                  </div>
+
+                  <div class="pt-1 mb-3">
+                    <button class="btn btn-dark btn-lg btn-block" type="button">
+                      Register
+                    </button>
+                  </div>
+
+                  <p class="mb-0 p-0" style="color: #393f81">
+                    Already have an account?
+                    <a routerLink="/login" style="color: #393f81">Login here</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
