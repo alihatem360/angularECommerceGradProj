@@ -1,8 +1,10 @@
+import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from './../../services/user.service';
 import { NgForm } from '@angular/forms';
 import { IUserRegister } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +20,8 @@ export class RegisterComponent implements OnInit {
   error = '';
   isLoading = false;
   registrationObservable: Subscription | undefined;
-  constructor(private _userService: UserService) {}
+  faBackward = faBackward;
+  constructor(private _userService: UserService, private _router: Router) {}
 
   ngOnInit(): void {}
 
@@ -36,6 +39,7 @@ export class RegisterComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.isLoading = true;
+          this._router.navigate(['login']);
         },
         error: (error) => {
           this.isLoading = false;
