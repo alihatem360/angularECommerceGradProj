@@ -1,3 +1,4 @@
+import { AuthGuard } from './../../services/auth.guard';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductsModule } from './products/products.module';
 import { CartModule } from './cart/cart.module';
@@ -12,9 +13,9 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', redirectTo: 'products', pathMatch: 'full' },
-
-      { path: 'user', loadChildren: () => UserModule },
-      { path: 'cart', loadChildren: () => CartModule },
+      
+      { path: 'user', canActivate : [AuthGuard], loadChildren: () => UserModule },
+      { path: 'cart', canActivate : [AuthGuard], loadChildren: () => CartModule },
       { path: 'products', loadChildren: () => ProductsModule },
       { path: 'products/details/:id', component: ProductDetailsComponent },
     ],
