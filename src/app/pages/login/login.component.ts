@@ -18,5 +18,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     //TODO handle login logic
+    if (form.invalid) {
+      return;
+    }
+    
   }
 }
