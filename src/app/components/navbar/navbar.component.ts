@@ -1,8 +1,10 @@
+import { LoginLogoutService } from './../../services/login-logout.service';
 import {
   faCartShopping,
   faDoorOpen,
+  faDoorClosed,
   faUser,
-  faVest
+  faVest,
 } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,7 +18,15 @@ export class NavbarComponent implements OnInit {
   faDoorOpen = faDoorOpen;
   faUser = faUser;
   faVest = faVest;
-  constructor() {}
-
+  faDoorClosed = faDoorClosed;
+  isLogin = false;
+  constructor(private loginLogoutService: LoginLogoutService) {
+    this.loginLogoutService.userChange.subscribe((value) => {
+      this.isLogin = !!value;
+    });
+  }
   ngOnInit(): void {}
+  logout() {
+    this.loginLogoutService.logoutUser();
+  }
 }

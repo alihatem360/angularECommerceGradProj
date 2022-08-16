@@ -9,6 +9,11 @@
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col col-md-8">
         <div class="card" style="border-radius: 1rem">
+            <div class="row">
+            <a class="m-1" routerLink="">
+              <fa-icon size="2x" [styles]="{'color' : '#FF6219'}" [icon]="faBackward"></fa-icon>
+            </a>
+          </div>
           <div class="row g-0 align-items-center">
             <div class="col-xl-4 col-md-4 d-none d-md-block">
               <img
@@ -89,9 +94,9 @@
 
                   <div class="pt-1 mb-3">
                     <button
-                      [disabled]="f.invalid"
+                      [disabled]="f.invalid || isLoading"
                       class="btn btn-dark btn-lg btn-block"
-                      type="button"
+                      type="submit"
                     >
                       Register
                     </button>
@@ -110,3 +115,4 @@
     </div>
   </div>
 </section>
+<app-toast [errorMessage]="error"></app-toast>

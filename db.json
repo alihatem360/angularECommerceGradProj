@@ -1,0 +1,175 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 4,
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass"
+    },
+    {
+      "id": 1,
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass"
+    },
+    {
+      "id": 5,
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass"
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 6
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 7
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 8
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 9
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 10
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 11
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 12
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 13
+    },
+    {
+      "name": "Dfasdfgil!",
+      "email": "absgffsd@gmail.com",
+      "password": "abc-pass",
+      "id": 14
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "asdfasd",
+      "name": "fadsfa",
+      "id": 15
+    },
+    {
+      "email": "",
+      "password": "",
+      "name": "",
+      "id": 16
+    },
+    {
+      "email": "",
+      "password": "",
+      "name": "",
+      "id": 17
+    },
+    {
+      "email": "",
+      "password": "",
+      "name": "",
+      "id": 18
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "gsrtw34",
+      "name": "omar sayed",
+      "id": 19
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "fadsfas",
+      "name": "a",
+      "id": 20
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "gsfdgsf",
+      "name": "a",
+      "id": 21
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "sdfgsdf",
+      "id": 22
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "g",
+      "id": 23
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "dasfdasfa",
+      "id": 24
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "fasdfad",
+      "id": 25
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "dasfad",
+      "id": 26
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "dfasf",
+      "id": 27
+    },
+    {
+      "email": "omar@gmail.comdsa",
+      "password": "fadsfads",
+      "id": 28
+    },
+    {
+      "email": "omar@gmail.com",
+      "password": "asdfad",
+      "id": 29
+    }
+  ]
+}

@@ -9,6 +9,11 @@
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col col-md-8">
         <div class="card" style="border-radius: 1rem">
+          <div class="row">
+            <a class="m-1" routerLink="">
+              <fa-icon size="2x" [styles]="{'color' : '#FF6219'}" [icon]="faBackward"></fa-icon>
+            </a>
+          </div>
           <div class="row g-0 align-items-end">
             <div class="col-md-6 col-lg-4 d-none d-md-block">
               <img
@@ -100,3 +105,4 @@
     </div>
   </div>
 </section>
+<app-toast [errorMessage]="error"></app-toast>
