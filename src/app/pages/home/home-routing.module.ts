@@ -1,3 +1,4 @@
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductsModule } from './products/products.module';
 import { CartModule } from './cart/cart.module';
 import { UserModule } from './user/user.module';
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'user', loadChildren: () => UserModule },
       { path: 'cart', loadChildren: () => CartModule },
       { path: 'products', loadChildren: () => ProductsModule },
+      { path: 'products/details/:id', component: ProductDetailsComponent },
     ],
   },
 ];

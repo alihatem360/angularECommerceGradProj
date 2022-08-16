@@ -9,7 +9,7 @@
                 <div class="card-body ">
                     <h4 class="card-title">{{item.title | slice:0:35}}...</h4>
                     <p class="card-text">{{item.description | slice:0:50}}...</p>
-                    <a [routerLink]="['/home/products/details',i]" class="btn  float-start ">See more</a>
+                    <a [routerLink]="['details',i]" class="btn  float-start ">See more</a>
                     <span class="float-end">{{item.price}}$</span>
                 </div>
 
