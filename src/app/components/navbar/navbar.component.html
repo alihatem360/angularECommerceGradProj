@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">Clothing Store</a>
+    <a class="navbar-brand" routerLink="/home">
+      <fa-icon size="2x" [icon]="faVest"></fa-icon>
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -23,19 +25,19 @@
 
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="user"
-            >User</a
-          >
+          <a class="nav-link" routerLinkActive="active" routerLink="user">
+            <fa-icon [icon]="faUser"></fa-icon>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="cart"
-            >Cart</a
-          >
+          <a class="nav-link" routerLinkActive="active" routerLink="cart">
+            <fa-icon [icon]="faCartShopping"></fa-icon>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/login"
-            >Login</a
-          >
+          <a class="nav-link" routerLinkActive="active" routerLink="/login">
+            <fa-icon [icon]="faDoorOpen"></fa-icon>
+          </a>
         </li>
       </ul>
     </div>
