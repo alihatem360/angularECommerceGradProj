@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="about">
+
+        <div class="row">
+            <div class="about-img  col-md-6 col-sm-12">
+                <img [src]="selectedProduct.image" alt={{selectedProduct.title}} />
+            </div>
+            <div class="about-tex col-md-6 col-sm-12">
+                <h4>{{selectedProduct.rating.rate}}</h4>
+                <h4>{{selectedProduct.price}} $</h4>
+                <h4>{{selectedProduct.title}}</h4>
+                <p> {{selectedProduct.description}}</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1> Related Products</h1>
+    <div class="row">
+        <div *ngFor=" let item of products ; let i = index " class="col-md-6 col-sm-12 col-lg-4">
+
+
+            <div class="card">
+                <img class="card-img-top" [src]="item.image !== null ? item.image : '../../assets/unknown.svg' "
+                    alt={{item.title}}>
+                <div class="card-body">
+                    <h4 class="card-title">{{item.title | slice:0:35}}...</h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
