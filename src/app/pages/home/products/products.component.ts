@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FetchDataService } from '../../../services/fetch-data.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  products: any = [];
+  constructor(public _FetchDataService: FetchDataService) {
+    this._FetchDataService.getProductsList().subscribe((data) => {
+      this.products = data;
+    });
   }
+
 
 }
