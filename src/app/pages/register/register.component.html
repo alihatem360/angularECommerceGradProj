@@ -89,9 +89,9 @@
 
                   <div class="pt-1 mb-3">
                     <button
-                      [disabled]="f.invalid"
+                      [disabled]="f.invalid || isLoading"
                       class="btn btn-dark btn-lg btn-block"
-                      type="button"
+                      type="submit"
                     >
                       Register
                     </button>
@@ -110,3 +110,4 @@
     </div>
   </div>
 </section>
+<app-toast [errorMessage]="error"></app-toast>
