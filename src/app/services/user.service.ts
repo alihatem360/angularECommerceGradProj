@@ -27,8 +27,8 @@ export class UserService {
       }
     );
   }
-  postLoginUser(userObj: IUserLogin): Observable<IUserLogin> {
-    return this._httpClient.post<IUserLogin>(
+  postLoginUser(userObj: IUserLogin): Observable<IUserRes> {
+    return this._httpClient.post<IUserRes>(
       `${this.apiBaseUrl}/users`,
       userObj,
       {

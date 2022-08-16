@@ -1,3 +1,4 @@
+import { LoginLogoutService } from './../../services/login-logout.service';
 import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { Subscription } from 'rxjs';
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   loginObservable: Subscription | undefined;
   faBackward = faBackward;
 
-  constructor(private _userService: UserService, private _router: Router) {}
+  constructor(private _userService: UserService, private _router: Router,private _loginLogoutService : LoginLogoutService) {}
 
   ngOnInit(): void {}
 
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.isLoading = true;
+          this._loginLogoutService.loginUser(`${data.id}`)
           this._router.navigate(['home']);
         },
         error: (error) => {
