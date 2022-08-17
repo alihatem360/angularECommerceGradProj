@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment.prod';
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -15,26 +16,18 @@ export class FetchDataService {
     "women's clothing",
   ];
   headers = new HttpHeaders();
+  token: string | null = '';
   constructor(public _HttpClient: HttpClient) {
+    this.token = localStorage.getItem('token');
     this.headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set(
-        'Authorization',
-        'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHJpbmciLCJleHAiOjE2NjA3NjM3Njl9.oOktfLlZXp2nJPuQkYaEJY0iHqukuiEpRDfVU4odvOB06zmFF0823oagrTBnQM9iYjN9Gsq_1y0_Ao_G_tKVJg'
-      );
+      .set('Authorization', 'Bearer ' + this.token);
   }
 
   getData(): Observable<any> {
-    console.log(
-      '🚀 ~ file: fetch-data.service.ts ~ line 25 ~ FetchDataService ~ constructor ~   this.headers',
-      this.headers
-    );
-    return this._HttpClient.get(
-      'https://clothing-store55.herokuapp.com/c/GetProducts',
-      {
-        headers: this.headers,
-      }
-    );
+    return this._HttpClient.get(`${environment.apiBaseUrl}/c/GetProducts`, {
+      headers: this.headers,
+    });
   }
   getProductsList(): Observable<any> {
     return this._HttpClient.get(

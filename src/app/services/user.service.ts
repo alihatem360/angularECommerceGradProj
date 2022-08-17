@@ -29,7 +29,7 @@ export class UserService {
   //     }
   //   );
   // }
-  
+
   postRegisteredUser(userData: IUserRegister): Observable<IUserRes> {
     return this._httpClient.post<IUserRes>(
       `${environment.apiBaseUrl}/register`,
@@ -38,7 +38,7 @@ export class UserService {
   }
   postLoginUser(userObj: IUserLogin): Observable<IUserRes> {
     return this._httpClient.post<IUserRes>(
-      `${this.apiBaseUrl}/users`,
+      `${this.apiBaseUrl}/login`,
       userObj,
       {
         headers: this.headers,
