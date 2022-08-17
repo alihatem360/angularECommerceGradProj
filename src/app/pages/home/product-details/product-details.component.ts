@@ -14,14 +14,14 @@ export class ProductDetailsComponent {
   constructor(public _FetchDataService: FetchDataService, public _ActivatedRoute: ActivatedRoute) {
     this.id = this._ActivatedRoute.snapshot.paramMap.get("id");
 
-    this._FetchDataService.getProductsList().subscribe((data) => {
+    this._FetchDataService.getData().subscribe((data) => {
       this.selectedProduct = data[this.id];
       console.log("selected product", this.selectedProduct);
     }
     );
 
-    this._FetchDataService.getRelatedProductsList().subscribe((data) => {
-      this.products = data;
+    this._FetchDataService.getData().subscribe((data) => {
+      this.products.push(data[1] , data[2] , data[3]);
     });
 
 

@@ -6,9 +6,9 @@
                 <img [src]="selectedProduct.image" alt={{selectedProduct.title}} />
             </div>
             <div class="about-tex col-md-6 col-sm-12">
-                <h4>{{selectedProduct.rating.rate}}</h4>
+                <h4>{{selectedProduct.size}}</h4>
                 <h4>{{selectedProduct.price}} $</h4>
-                <h4>{{selectedProduct.title}}</h4>
+                <h4>{{selectedProduct.name}}</h4>
                 <p> {{selectedProduct.description}}</p>
 
             </div>
@@ -26,7 +26,7 @@
                 <img class="card-img-top" [src]="item.image !== null ? item.image : '../../assets/unknown.svg' "
                     alt={{item.title}}>
                 <div class="card-body">
-                    <h4 class="card-title">{{item.title | slice:0:35}}...</h4>
+                    <h4 class="card-title">{{item.name | slice:0:35}}...</h4>
                 </div>
 
             </div>
