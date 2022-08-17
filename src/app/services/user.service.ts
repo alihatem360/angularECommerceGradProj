@@ -18,18 +18,27 @@ export class UserService {
     return this._httpClient.get<IUserRes>(`${this.apiBaseUrl}/users/${id}`);
   }
   headers = { 'Content-Type': 'application/json' };
-  postRegisteredUser(userObj: IUserRegister): Observable<IUserRegister> {
-    return this._httpClient.post<IUserRegister>(
-      `${this.apiBaseUrl}/users`,
-      userObj,
-      {
-        headers: this.headers,
-      }
+
+  //! code that handles local API
+  // postRegisteredUser(userObj: IUserRegister): Observable<IUserRegister> {
+  //   return this._httpClient.post<IUserRegister>(
+  //     `${this.apiBaseUrl}/users`,
+  //     userObj,
+  //     {
+  //       headers: this.headers,
+  //     }
+  //   );
+  // }
+
+  postRegisteredUser(userData: IUserRegister): Observable<IUserRes> {
+    return this._httpClient.post<IUserRes>(
+      `${environment.apiBaseUrl}/register`,
+      userData
     );
   }
   postLoginUser(userObj: IUserLogin): Observable<IUserRes> {
     return this._httpClient.post<IUserRes>(
-      `${this.apiBaseUrl}/users`,
+      `${this.apiBaseUrl}/login`,
       userObj,
       {
         headers: this.headers,

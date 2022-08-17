@@ -1,25 +1,26 @@
+
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginLogoutService {
-  userId: string | null = '';
+  token: string | null = '';
   userChange = new BehaviorSubject<string | null>('');
 
   constructor() {
     this.userChange.subscribe((value) => {
-      this.userId = value;
+      this.token = value;
     });
-    let userId: string | null = localStorage.getItem('userId');
+    let token: string | null = localStorage.getItem('token');
 
-    this.userChange.next(userId);
+    this.userChange.next(token);
   }
   dummyAuth(): Promise<any> {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.userId);
+        resolve(this.token);
       }, 500);
     });
     return promise;
@@ -27,11 +28,13 @@ export class LoginLogoutService {
 
   loginUser(id: string) {
     this.userChange.next(id);
-    localStorage.setItem('userId', `${id}`);
+    localStorage.setItem('token', `${id}`);
   }
 
   logoutUser() {
     this.userChange.next('');
-    localStorage.setItem('userId', '');
+    localStorage.setItem('token', '');
   }
+
+
 }

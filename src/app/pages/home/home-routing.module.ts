@@ -11,11 +11,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivateChild: [AuthGuard],
     children: [
       { path: '', redirectTo: 'products', pathMatch: 'full' },
-      
-      { path: 'user', canActivate : [AuthGuard], loadChildren: () => UserModule },
-      { path: 'cart', canActivate : [AuthGuard], loadChildren: () => CartModule },
+
+      { path: 'user', loadChildren: () => UserModule },
+      { path: 'cart', loadChildren: () => CartModule },
       { path: 'products', loadChildren: () => ProductsModule },
       { path: 'products/details/:id', component: ProductDetailsComponent },
     ],
