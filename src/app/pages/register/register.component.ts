@@ -1,3 +1,4 @@
+import { LoginLogoutService } from './../../services/login-logout.service';
 import { faBackward } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from './../../services/user.service';
 import { NgForm } from '@angular/forms';
@@ -15,13 +16,13 @@ export class RegisterComponent implements OnInit {
   userForm: IUserRegister = {
     email: '',
     password: '',
-    name: '',
+    username: '',
   };
   error = '';
   isLoading = false;
   registrationObservable: Subscription | undefined;
   faBackward = faBackward;
-  constructor(private _userService: UserService, private _router: Router) {}
+  constructor(private _userService: UserService, private _router: Router, private _loginLogoutService : LoginLogoutService) {}
 
   ngOnInit(): void {}
 
@@ -38,13 +39,14 @@ export class RegisterComponent implements OnInit {
       .postRegisteredUser(this.userForm)
       .subscribe({
         next: (data) => {
+        // console.log("🚀 ~ file: register.component.ts ~ line 42 ~ RegisterComponent ~ onSubmit ~ data", data)
           this.isLoading = true;
           this._router.navigate(['login']);
         },
         error: (error) => {
           this.isLoading = false;
           this.error = '';
-          this.error = error.message;
+          this.error = error.error;
         },
         complete: () => {
           this.isLoading = false;

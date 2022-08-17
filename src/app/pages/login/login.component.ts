@@ -22,7 +22,11 @@ export class LoginComponent implements OnInit {
   loginObservable: Subscription | undefined;
   faBackward = faBackward;
 
-  constructor(private _userService: UserService, private _router: Router,private _loginLogoutService : LoginLogoutService) {}
+  constructor(
+    private _userService: UserService,
+    private _router: Router,
+    private _loginLogoutService: LoginLogoutService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -37,13 +41,20 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.isLoading = true;
-          this._loginLogoutService.loginUser(`${data.id}`)
+          // this._loginLogoutService.loginUser(`${data.id}`);
           this._router.navigate(['home']);
         },
         error: (error) => {
           this.isLoading = false;
+          // handle case of sending the token in an error body
+          if (error.status === 200) {
+            // this is the token
+            let token = error.error.text;
+            this._loginLogoutService.loginUser(`${token}`);
+            this._router.navigate(['home']);
+          }
           this.error = '';
-          this.error = error.message;
+          this.error = error.error;
         },
         complete: () => {
           this.isLoading = false;
