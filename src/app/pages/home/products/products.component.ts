@@ -13,6 +13,9 @@ export class ProductsComponent {
     this._FetchDataService.getProductsList().subscribe((data) => {
       this.products = data;
     });
+    // this._FetchDataService.getData().subscribe((data) => {
+    //   console.log(data)
+    // })
   }
 
 
