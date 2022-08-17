@@ -35,19 +35,21 @@ export class FetchDataService {
     );
   }
 
-  // getProductsList(): Observable<any> {
-  //   return this._HttpClient.get('https://clothing-store55.herokuapp.com/c/GetProducts');
-  // }
+  getRelatedProductsList(): Observable<any> {
+    return this._HttpClient.get('https://fakestoreapi.com/products/category/' + this.category[3] + '?limit=3');
+
+  }
 
   // getProductsDetails(id: any): Observable<any> {
   //   return this._HttpClient.get('https://fakestoreapi.com/products/' + id);
   // }
 
-  getRelatedProductsList(): Observable<any> {
-    return this._HttpClient.get(
-      'https://fakestoreapi.com/products/category/' +
-        this.category[3] +
-        '?limit=3'
-    );
-  }
+  // getProductsList(): Observable<any> {
+  //   return this._HttpClient.get('https://clothing-store55.herokuapp.com/c/GetProducts');
+  // }
+
+
 }
+
+
+
