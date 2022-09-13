@@ -1,5 +1,8 @@
 # AngularECommerceGradProj
 # Live Demo : https://21dfe692.angularecommercegradproj.pages.dev/ ⚡
+# wait for Gift
+![grab-landing-page](https://github.com/alihatem360/angularECommerceGradProj/blob/master/src/assets/photos/Untitled%20design.gif)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
