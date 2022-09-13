@@ -1,6 +1,6 @@
 # AngularECommerceGradProj
 # Live Demo : https://21dfe692.angularecommercegradproj.pages.dev/ ⚡
-# wait for Gift
+# wait for Gif 🎉
 ![grab-landing-page](https://github.com/alihatem360/angularECommerceGradProj/blob/master/src/assets/photos/Untitled%20design.gif)
 
 
